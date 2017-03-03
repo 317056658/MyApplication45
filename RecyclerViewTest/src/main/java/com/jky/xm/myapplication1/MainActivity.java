@@ -10,7 +10,8 @@ import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    private List<Fruit> fruitList=new ArrayList<>();
+    private List fruitList=new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         FruitAdapter adapter=new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);
+
     }
     private  void initFruits(){
         for (int i = 0; i < 2; i++) {

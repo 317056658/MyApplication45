@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
-    private List<Fruit> mFruitList;
+    private List mFruitList;
     static class ViewHolder extends RecyclerView.ViewHolder{
         View fruitView;
         ImageView  fruitImage;
@@ -30,25 +30,25 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
         }
     }
 
-    public FruitAdapter(List<Fruit> fruitList) {
-        mFruitList=fruitList;
+    public FruitAdapter(List fruitList) {
+        this.mFruitList=fruitList;
     }
-
+    Boolean  aaa= false;
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
        View view =LayoutInflater.from(parent.getContext()).inflate(R.layout.fruit_item,parent,false);
         final ViewHolder holder=new ViewHolder(view);
        holder.fruitView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-                 Fruit fruit=mFruitList.get(holder.getAdapterPosition());
-               Toast.makeText(view.getContext(),fruit.getName(),Toast.LENGTH_LONG).show();
+                 mFruitList.get(holder.getAdapterPosition());
+               Toast.makeText(view.getContext(),"aaaa",Toast.LENGTH_LONG).show();
            }
        });
         holder.fruitImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Fruit fruit=mFruitList.get(holder.getAdapterPosition());
-                Toast.makeText(view.getContext(),fruit.getImageId()+"",Toast.LENGTH_LONG).show();
+                    aaa=true;
+                  Toast.makeText(view.getContext(),"bbbbb",Toast.LENGTH_LONG).show();
             }
         });
         return holder;
@@ -56,9 +56,8 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.ViewHolder>{
 
 
     public void onBindViewHolder(ViewHolder holder, int position) {
-                 Fruit fruit=mFruitList.get(position);
-                  holder.fruitName.setText(fruit.getName());
-                  holder.fruitImage.setImageResource(fruit.getImageId());
+
+
     }
 
     @Override

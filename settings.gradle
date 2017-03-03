@@ -1,1 +1,1 @@
-include ':app', ':RecyclerViewTest', ':uibestpractice', ':fragmenttest'
+include ':app', ':RecyclerViewTest', ':uibestpractice', ':fragmenttest', ':framentnews1'
